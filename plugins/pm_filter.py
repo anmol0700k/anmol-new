@@ -658,7 +658,7 @@ async def auto_filter(client, msg, spoll=False):
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
                 await client.send_message(req_channel, f"#REQUESTED_LOGS \n\n**CONTENT NAME:**'{search}' \n**REQUESTED BY:** {message.from_user.first_name}\n**USER ID:** {message.from_user.id}", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("✅ Mark as Done ✅", callback_data="close_data")]]))
-                await message.reply_text(text=f"Hello '{messsage.from_user.first_name}' 😊. \n\n Your request has been sent to your admin ! \n\n ❤️ THANK YOU ❤️ <a herf='https://t.me/Request_Log'>Request Logs</a>")
+                await message.reply_text(text=f"Hello '{message.from_user.first_name}' 😊. \n\n Your request has been sent to your admin ! \n\n ❤️ THANK YOU ❤️ <a herf='https://t.me/Request_Log'>Request Logs</a>")
                 if settings["spell_check"]:
                     return await advantage_spell_chok(msg)
                 else:
